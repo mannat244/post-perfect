@@ -2,6 +2,15 @@ import { NextResponse } from "next/server";
 const { getJson } = require("serpapi");
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
+async function checkCORS(url) {
+  try {
+    const response = await fetch(url, { method: "HEAD", mode: "no-cors" });
+    return response.ok; // If response is okay, CORS is allowed
+  } catch (error) {
+    return false; // Blocked by CORS
+  }
+}
+
 
 export async function POST(req) {
 
@@ -46,10 +55,24 @@ await getJson({
   q: read.image,
   hl: "en",
   gl: "in"
-}, (json) => {
-  data =  json.images_results[0].original;
-  const proxyUrl = "https://corsproxy.io/?";
-  imageUrl = proxyUrl + encodeURIComponent(data);
+}, async(json) => {
+  // data =  json.images_results[0].original;
+  // const proxyUrl = "https://corsproxy.io/?";
+  // imageUrl = proxyUrl + encodeURIComponent(data);
+
+  const images = json.images_results.map((img) => img.original);
+
+    for (let i = 0; i < images.length; i++) {
+      const corsAllowed = await checkCORS(images[i]);
+      if (corsAllowed) {
+        imageUrl = images[i];
+        break;
+      }
+    }
+
+    if (!imageUrl) {
+      imageUrl = images[0]
+    }
 
 });
 
