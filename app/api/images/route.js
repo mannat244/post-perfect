@@ -56,8 +56,8 @@ await getJson({
   hl: "en",
   gl: "in"
 }, async(json) => {
-  const ind = Math.floor(Math.random() * 3);
-    imageUrl =  json.images_results[ind].original;
+    const ind = Math.floor(Math.random() * 3);
+    imageUrl = "https://api.cors.lol/?url=" + json.images_results[ind].original;
   
 });
 

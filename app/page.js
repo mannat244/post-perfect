@@ -178,7 +178,7 @@ export default function Home() {
      </form>
     </div>
     <div className="generation">
-    <canvas ref={canvasRef} height={show ? 1080 : 0} width={1080}  style={{ height: show ? "400px" : "0px", transition: "height 0.3s ease-in-out" }} className="bg-zinc-700 h-[400px] w-[400px] mx-auto mt-10 rounded-md"></canvas>
+    <canvas ref={canvasRef} height={show ? 1080 : 0} width={1080}  style={{ height: show ? "400px" : "0px", transition: "height 0.3s ease-in-out" }} className="h-[400px] w-[400px] mx-auto mt-10 rounded-md"></canvas>
     </div>
      <img ref={imgRef} className="h-36 mx-auto"  src="/transparent-food.gif" />
     <p ref={capRef} onClick={()=>{

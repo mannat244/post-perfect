@@ -15,6 +15,12 @@ body {
     animation: gradient-animation 30s ease infinite;
   }
   
+  canvas {
+    background-image: url(/load.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
   @keyframes gradient-animation {
     0% {
       background-position: 0% 50%;
