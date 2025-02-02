@@ -56,7 +56,8 @@ await getJson({
   hl: "en",
   gl: "in"
 }, async(json) => {
-  imageUrl =  json.images_results[0].original;
+  const ind = Math.floor(Math.random() * 3);
+    imageUrl =  json.images_results[ind].original;
   
 });
 
