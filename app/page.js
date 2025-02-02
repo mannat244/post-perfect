@@ -63,7 +63,8 @@ export default function Home() {
       setserpapi(serpkey)
       setgemini(geminiApikey)
   
-  
+      console.log("loaded keys", serpapi, gemini)
+
       if (!serpkey || !geminiApikey) {
           toast.error("API keys missing! Please enter and save them first.", {
               position: "top-right",

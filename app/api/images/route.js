@@ -47,7 +47,10 @@ await getJson({
   hl: "en",
   gl: "in"
 }, (json) => {
-  imageUrl =  json.images_results[0].original;
+  data =  json.images_results[0].original;
+  const proxyUrl = "https://corsproxy.io/?";
+  imageUrl = proxyUrl + encodeURIComponent(data);
+
 });
 
 

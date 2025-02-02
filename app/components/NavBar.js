@@ -12,6 +12,8 @@ const NavBar = () => {
     localStorage.setItem("serpkey", serpkey);
     localStorage.setItem("geminiApikey", geminiApikey);
 
+    console.log("saved keys: ", serpkey , geminiApikey)
+
     const success =  toast.success('Keys Saved! 📋✨', {
             position: "top-right",
             autoClose: 3000,
