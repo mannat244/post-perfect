@@ -24,8 +24,8 @@ const NavBar = () => {
             });
 
             try{ success()
-             } catch {
-
+             } catch(error) {
+              console.log(error)
             }
            
     }

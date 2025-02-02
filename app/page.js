@@ -59,6 +59,9 @@ export default function Home() {
 
       const serpkey = localStorage.getItem("serpkey");
       const geminiApikey = localStorage.getItem("geminiApikey");
+
+      setserpapi(serpkey)
+      setgemini(geminiApikey)
   
   
       if (!serpkey || !geminiApikey) {
@@ -125,8 +128,7 @@ export default function Home() {
     capRef.current.style.display = "block";
     imgRef.current.style.display = "block";
  
-    setserpapi(localStorage.getItem("serpkey"))
-    setgemini(localStorage.getItem("geminiApikey"))
+   
 
     try{
 
