@@ -56,24 +56,8 @@ await getJson({
   hl: "en",
   gl: "in"
 }, async(json) => {
-  // data =  json.images_results[0].original;
-  // const proxyUrl = "https://corsproxy.io/?";
-  // imageUrl = proxyUrl + encodeURIComponent(data);
-
-  const images = json.images_results.map((img) => img.original);
-
-    for (let i = 0; i < images.length; i++) {
-      const corsAllowed = await checkCORS(images[i]);
-      if (corsAllowed) {
-        imageUrl = images[i];
-        break;
-      }
-    }
-
-    if (!imageUrl) {
-      imageUrl = images[0]
-    }
-
+  imageUrl =  json.images_results[0].original;
+  
 });
 
 
