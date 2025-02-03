@@ -55,7 +55,7 @@ await getJson({
   gl: "in"
 }, async(json) => {
     
-  imageUrl = "https://api.codetabs.com/v1/proxy/?quest=" + json.images_results[ind].original;
+  imageUrl = "https://api.codetabs.com/v1/proxy/?quest=" + json.images_results[0].original;
   
 });
 

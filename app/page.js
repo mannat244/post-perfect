@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar";
 import FAQ from "./components/FAQ";
 import { toast } from 'react-toastify';
 import Hero from "./components/Hero";
+import TutorialModal from "./components/TutorialModal";
 
 export default function Home() {
 
@@ -166,6 +167,7 @@ export default function Home() {
 
   return (
    <div>
+    <TutorialModal/>
     <NavBar/>
     <Hero/>
     <div className="prompt w-[80%] md:w-[50%] mt-10 mx-auto flex justify-center items-center flex-col">
