@@ -20,13 +20,11 @@ export async function POST(req) {
   const serpapi = body.serpapi;
 
   const genAI = new GoogleGenerativeAI(gemni);
- // const genAI = new GoogleGenerativeAI("AIzaSyA0XvXVGfkCMFBeNI58aVKIKI3Skq_RADU");
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
   let liveData = topic;
 
    await getJson({
-    //api_key: "e4af0ebdf76190ffb35221397b50ebd3eb9eef02703f1f6940127d14524eb866",
     api_key: serpapi,
     engine: "google",
     q: topic,
@@ -56,8 +54,8 @@ await getJson({
   hl: "en",
   gl: "in"
 }, async(json) => {
-    const ind = Math.floor(Math.random() * 3);
-    imageUrl = json.images_results[ind].original;
+    
+  imageUrl = "https://api.codetabs.com/v1/proxy/?quest=" + json.images_results[ind].original;
   
 });
 
